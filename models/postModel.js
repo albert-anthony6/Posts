@@ -16,6 +16,10 @@ const postSchema = new mongoose.Schema({
         maxlength: [280, 'Post content must be less than or equal to 280 characters'],
         minlength: [2, 'Post content must have at least 2 characters']
     },
+    createdAt: {
+        type: Date,
+        default: Date.now()
+    }
 });
 
 const Post = mongoose.model('Post', postSchema);
